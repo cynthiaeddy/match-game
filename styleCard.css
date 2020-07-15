@@ -1,0 +1,61 @@
+/* .wrapper {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.typing-demo {
+	width: 22ch;
+	animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 3px solid;
+	font-family: monospace;
+	font-size: 2em;
+} */
+
+.iris {
+	width: 20%;
+	height: 20%;
+	margin: 30%;
+	border-radius: 50%;
+	background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
+	transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+	position: absolute;
+	animation: move-eye-skew 5s ease-out infinite;
+}
+.iris:before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 10.5%;
+	height: 10.5%;
+	border-radius: 50%;
+	top: 31.25%;
+	left: 31.25%;
+	background: black;
+}
+.iris:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 5.25%;
+	height: 5.25%;
+	border-radius: 50%;
+	top: 18.75%;
+	left: 18.75%;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+
+@keyframes blink {
+	50% {
+		border-color: transparent;
+	}
+}

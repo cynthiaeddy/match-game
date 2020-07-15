@@ -17,12 +17,12 @@ function flipCard() {
 		secondCard = this;
 		console.log(firstCard, secondCard);
 		if (firstCard.dataset.image === secondCard.dataset.image) {
-			// firstCard.removeEventListener('click', flipCard);
-			// secondCard.removeEventListener('click', flipCard);
-			setTimeout(() => {
-				firstCard.classList.add('hide');
-				secondCard.classList.add('hide');
-			}, 1500);
+			firstCard.removeEventListener('click', flipCard);
+			secondCard.removeEventListener('click', flipCard);
+			// setTimeout(() => {
+			// 	firstCard.classList.add('hide');
+			// 	secondCard.classList.add('hide');
+			// }, 1500);
 		} else {
 			setTimeout(() => {
 				firstCard.classList.remove('flip');
