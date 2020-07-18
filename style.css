@@ -7,7 +7,7 @@
 body {
 	height: 100vh;
 	display: flex;
-	background: #000;
+	background: #fff
 	font-family: 'Bevan', cursive;
 	flex-wrap: wrap;
 }
@@ -17,7 +17,6 @@ body {
 	height: 640px;
 	margin: auto;
 	display: flex;
-	color: #fff;
 	display: relative;
 	flex-wrap: wrap;
 	perspective: 1000px;
@@ -54,6 +53,7 @@ h3 {
 	height: calc(33.333% - 10px);
 	margin: 5px;
 	position: relative;
+	border-radius: 10px;
 	transform: scale(1);
 	transform-style: preserve-3d;
 	transition: transform .5s;
@@ -80,13 +80,12 @@ img.escher {
 	height: 100%;
 	padding: 0;
 	position: absolute;
-	border-radius: 10px;
-	background: #fff;
+	/* border-radius: 10px; */
 	backface-visibility: hidden;
 }
 .front {
 	padding: 0px;
-	border-radius: 10px;
+	/* border-radius: 10px; */
 }
 /* .car {
 	width: 100%;
