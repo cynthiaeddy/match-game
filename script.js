@@ -1,10 +1,11 @@
 // console.log(cards);
 const cards = document.querySelectorAll('.card');
-
+let background = document.querySelector('.background');
 let hasCardFlipped = false;
 let boardLock = false;
 let firstCard;
 let secondCard;
+let opacity = (background.style.opacity = 0);
 
 function flipCard() {
 	if (boardLock) return;
@@ -33,9 +34,18 @@ function checkForMatch() {
 function cardsMatch() {
 	firstCard.removeEventListener('click', flipCard);
 	secondCard.removeEventListener('click', flipCard);
+	checkOpacity();
+
 	//or below if want to hide
 	// firstCard.classList.add('hide');
 	resetBoard();
+}
+
+function checkOpacity() {
+	opacity += 0.165;
+	background.style.opacity = opacity.toFixed(2);
+
+	console.log('hi', opacity, typeof 'opacity', background.style.opacity, +background.style.opacity);
 }
 function cardsDontMatch() {
 	boardLock = true;
@@ -50,11 +60,11 @@ function resetBoard() {
 	[ hasCardFlipped, boardLock ] = [ false, false ];
 	[ firstCard, secondCard ] = [ null, null ];
 }
-(function shuffle() {
-	cards.forEach((card) => {
-		let randomPosition = Math.floor(Math.random() * 12);
-		card.style.order = randomPosition;
-	});
-})();
+// (function shuffle() {
+// 	cards.forEach((card) => {
+// 		let randomPosition = Math.floor(Math.random() * 12);
+// 		card.style.order = randomPosition;
+// 	});
+// })();
 
 cards.forEach((card) => card.addEventListener('click', flipCard));

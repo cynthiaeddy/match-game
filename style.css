@@ -7,9 +7,18 @@
 body {
 	height: 100vh;
 	display: flex;
-	background: #fff
+	/* background: #fff */
 	font-family: 'Bevan', cursive;
 	flex-wrap: wrap;
+	/* opacity: 0; */
+}
+.background {
+	width: 640px;
+	height: 640px;
+	background: #000;
+	z-index: -1;
+	position: absolute;
+	opacity: 0;
 }
 
 .cards {
@@ -20,6 +29,11 @@ body {
 	display: relative;
 	flex-wrap: wrap;
 	perspective: 1000px;
+	/* background: #000000;
+	background-opacity: 0; */
+}
+.opacity {
+	opacity: 0.30;
 }
 .underneath {
 	width: 640px;
