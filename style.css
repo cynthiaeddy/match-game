@@ -32,9 +32,7 @@ body {
 	/* background: #000000;
 	background-opacity: 0; */
 }
-.opacity {
-	opacity: 0.30;
-}
+
 .underneath {
 	width: 640px;
 	height: 640px;
@@ -115,10 +113,10 @@ img.back-face {
 } */
 
 /* //delay transistion setinterval*/
-.hide {
+.hide.cards {
 	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s linear 1s, opacity 1s;
+	/* opacity: 0;
+	transition: visibility 0s linear 1s, opacity 1s; */
 }
 img.car {
 	padding: 0;

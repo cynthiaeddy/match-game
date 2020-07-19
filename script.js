@@ -6,6 +6,7 @@ let boardLock = false;
 let firstCard;
 let secondCard;
 let opacity = (background.style.opacity = 0);
+let count = 0;
 
 function flipCard() {
 	if (boardLock) return;
@@ -18,10 +19,10 @@ function flipCard() {
 		firstCard = this;
 		return;
 	}
-	console.log(hasCardFlipped, firstCard);
+	// console.log(hasCardFlipped, firstCard);
 
 	secondCard = this;
-	console.log(firstCard, secondCard);
+	// console.log(firstCard, secondCard);
 	checkForMatch();
 }
 //do cards match?
@@ -34,18 +35,23 @@ function checkForMatch() {
 function cardsMatch() {
 	firstCard.removeEventListener('click', flipCard);
 	secondCard.removeEventListener('click', flipCard);
-	checkOpacity();
 
-	//or below if want to hide
-	// firstCard.classList.add('hide');
+	checkOpacity();
+	// 	// count++;
+	// 	// console.log(cards, cards.value);
+	// 	// if (count === 6) {
+	// 	// 	secondCard.classList.remove('hide');
+	// 	// 	firstCard.classList.remove('hide');
+	// 	// 	// secondCard.classList.add('hide');
+	// 	// }
+	// 	//or below if want to hide
+	// 	// firstCard.classList.add('hide');
 	resetBoard();
 }
 
 function checkOpacity() {
 	opacity += 0.165;
 	background.style.opacity = opacity.toFixed(2);
-
-	console.log('hi', opacity, typeof 'opacity', background.style.opacity, +background.style.opacity);
 }
 function cardsDontMatch() {
 	boardLock = true;
