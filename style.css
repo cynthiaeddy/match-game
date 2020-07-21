@@ -8,20 +8,14 @@ body {
 	height: 100vh;
 	display: flex;
 	flex-wrap: wrap;
-	/* opacity: 0; */
 }
+
 .background {
 	width: 640px;
 	height: 640px;
-	/* background: #000; */
-	/* z-index: -1; */
 	position: absolute;
-	/* opacity: 0; */
 	background-image: url("images/backgroundTry.jpg");
-	visibility: hidden;
-}
-.show {
-	visibility: visible;
+	opacity: 0;
 }
 .cards {
 	width: 640px;
@@ -31,33 +25,29 @@ body {
 	display: relative;
 	flex-wrap: wrap;
 	perspective: 1000px;
-	/* background: #000000;
-	background-opacity: 0; */
 }
 .z-up {
-	/* transition: all 2s ease-in-out; */
-	z-index: 1;
-	animation-name: z-up;
+	animation: z-up 4s ease-in-out;
+}
+.show {
+	visibility: visible;
 }
 
 @keyframes z-up {
 	0% {
 		opacity: 0;
-		-webkit-transform: translateX(-20px);
 	}
-	25% {
+	50% {
 		opacity: 1;
-		-webkit-transform: translateX(0);
 	}
 	75% {
 		opacity: 1;
-		-webkit-transform: translateX(0);
 	}
 	100% {
 		opacity: 0;
-		-webkit-transform: translateX(20px);
 	}
 }
+
 .card {
 	width: calc(25% - 10px);
 	height: calc(33.333% - 10px);
@@ -67,7 +57,6 @@ body {
 	transform: scale(1);
 	transform-style: preserve-3d;
 	transition: transform .5s;
-	box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
 }
 
 .card:active {
@@ -79,40 +68,27 @@ body {
 .card.flip {
 	transform: rotateY(180deg);
 }
-img.ball,
-img.escher {
-	width: 100%;
-	padding-top: 25%;
-}
+
 .front,
 .back {
 	width: 100%;
 	height: 100%;
 	padding: 0;
 	position: absolute;
-	/* border-radius: 10px; */
 	backface-visibility: hidden;
 }
 .front {
 	padding: 0px;
-	/* border-radius: 10px; */
 }
-/* .car {
-	width: 100%;
-} */
+
 .front {
 	transform: rotateY(180deg);
 }
-/* img.front-face {
-	width: 75%;
-}
-img.back-face {
-	width: 50%;
-} */
 
 .show-background {
 	visibility: visible;
-	animation: animateShowImage 3s linear alternate;
+	animation: animateShowImage 4s;
+	/* animation: animateShowImage 3s linear alternate; */
 }
 @keyframes animateShowImage {
 	0% {
