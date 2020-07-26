@@ -5,6 +5,9 @@ font-family: 'Khula', sans-serif;
 font-family: 'Orbitron', sans-serif;
 font-family: 'Quicksand', sans-serif;
 font-family: 'Roboto Mono', monospace; */
+:root {
+	--red-color: rgb(255, 81, 0);
+}
 
 * {
 	padding: 0;
@@ -26,7 +29,7 @@ body {
 	font-size: 25px;
 	font-weight: 100;
 	left: -450px;
-	padding: 32px 50px 32px 30px;
+	padding: 32px 40px;
 	position: fixed;
 	height: 100vh;
 	border-radius: 0 50px 50px 0;
@@ -43,8 +46,18 @@ body {
 	left: 0;
 }
 ul {
-	list-style-type: none;
+	list-style: none;
 }
+
+ul li::before {
+	content: "\2022";
+	color: var(--red-color);
+	font-weight: bold;
+	display: inline-block;
+	width: 20px;
+	margin-left: -20px;
+}
+
 h2,
 h1 {
 	font-weight: 100;
@@ -60,8 +73,18 @@ h1 {
 }
 
 span {
-	color: red;
+	animation: change 2s step-end both;
 }
+
+@keyframes change {
+	from {
+		color: black;
+	}
+	to {
+		color: var(--red-color);
+	}
+}
+
 h3 {
 	font-size: 20px;
 	font-weight: 200;
@@ -91,7 +114,7 @@ h3 {
 	top: 50%;
 	transition: all 0.5s ease;
 	transform: translateY(-50%);
-	background-color: yellowgreen;
+	background-color: rgba(255, 81, 0, 0.8);
 	content: '';
 	height: 3px;
 	width: 100%;
@@ -108,7 +131,7 @@ h3 {
 
 .nav-toggle.expanded .nav-toggle-bar::after,
 .nav-toggle.expanded .nav-toggle-bar::before {
-	background-color: yellowgreen;
+	background-color: rgba(255, 81, 0, 0.8);
 	margin-top: 0;
 }
 .nav-toggle.expanded .instructions {
@@ -188,6 +211,9 @@ h3 {
 .card.flip {
 	transform: rotateY(180deg);
 }
+/* .show {
+	transform: rotateY(180deg);
+} */
 
 .front,
 .back {
@@ -236,12 +262,18 @@ img.car {
 	text-align: center;
 	width: 50px;
 	height: 50px;
-	border-radius: 50%;
+	border-radius: 20%;
 	background: url("images/frontmaybe2.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 200%;
 	margin: auto;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+.lilBug:hover {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	transform: scale(1.05);
+	transition: transform .2s;
 }
 
 @media (max-width: 1024px) {

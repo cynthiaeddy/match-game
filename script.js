@@ -1,11 +1,14 @@
 // console.log(cards);
 const cards = document.querySelectorAll('.card');
 let background = document.querySelector('.background');
+const carButton = document.querySelector('.lilBug');
 let hasCardFlipped = false;
 let boardLock = false;
 let firstCard;
 let secondCard;
 let count = 0;
+
+//////////// nav functions //////////////
 
 const hamburger = {
 	navToggle: document.querySelector('.nav-toggle'),
@@ -23,6 +26,8 @@ hamburger.navToggle.addEventListener('click', function(e) {
 hamburger.nav.addEventListener('click', function(e) {
 	hamburger.doToggle(e);
 });
+
+//////////// card functions //////////////
 
 function flipCard() {
 	if (this === firstCard) return;
@@ -94,5 +99,20 @@ function resetBoard() {
 // 		card.style.order = randomPosition;
 // 	});
 // })();
+function shuffle() {
+	cards.forEach((card) => {
+		let randomPosition = Math.floor(Math.random() * 12);
+		card.style.order = randomPosition;
+	});
+}
+
+carButton.addEventListener('click', shuffle);
 
 cards.forEach((card) => card.addEventListener('click', flipCard));
+
+// function addShow() {
+// 	cards.forEach((card) => {
+// 		if(card.flip)
+// 			card.classList.remove('flip')
+// 		}
+// 	}
