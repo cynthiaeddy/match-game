@@ -274,7 +274,7 @@ img.car {
 	margin: auto;
 }
 
-@media (min-width: 1200px) and(max-width:1400px) {
+/* @media (min-width: 1200px) and(max-width:1400px) {
 	.nav {
 		width: 52%;
 	}
@@ -282,28 +282,21 @@ img.car {
 		z-index: 10;
 		left: 24%;
 	}
-}
+} */
 
 @media (max-width: 1024px) {
-	.nav {
-		width: 62vw;
-		top: 360px;
+	.nav-container {
+		height: 20vh;
 	}
-	.nav.expanded {
-		z-index: 10;
-		left: 19vw;
+	h1,
+	h2 {
+		margin-top: 150px;
+	}
+	.circleFooter {
+		height: 250px;
 	}
 }
 @media (max-width: 768px) {
-	.nav {
-		width: 84vw;
-		top: 195px;
-		left: -100%;
-	}
-	.nav.expanded {
-		z-index: 10;
-		left: 8vw;
-	}
 	h2 {
 		margin-top: 80px;
 	}
@@ -314,10 +307,10 @@ img.car {
 		height: 150px;
 	}
 }
-@media (max-width: 450px) {
+@media (max-width: 450px) and (max-height: 815px) {
 	.nav {
-		width: 90vw;
-		top: 95px;
+		top: 140px;
+		width: 100vw;
 		left: -100%;
 	}
 	.nav-container {
@@ -327,10 +320,18 @@ img.car {
 	}
 	.nav.expanded {
 		z-index: 10;
-		left: 5vw;
+		left: 0;
+
+		padding-right: 20px;
 	}
 	h2 {
 		margin-top: 30px;
+	}
+	h1 {
+		margin-top: 20px;
+	}
+	h3 {
+		line-height: 1.5;
 	}
 	.circleFooter {
 		height: 10vh;
@@ -344,25 +345,35 @@ img.car {
 	}
 
 	.cards {
-		/* height: 640px; */
-		/* width: 90vw; */
 		width: 90vw;
 		top: 17vh;
 		bottom: 10vh;
 		position: fixed;
-		/* overflow: auto; */
-		margin-top: 0;
-		margin-bottom: 0;
+		margin: 0 0 0 20px;
 		height: auto;
 	}
-}
-.background {
-	width: 90vw;
-	height: auto;
-	background: orchid;
-	opacity: 1;
-}
 
-nav-toggle {
-	padding-bottom: 10px;
+	.background {
+		width: 90vw;
+		height: auto;
+		background: orchid;
+		opacity: 1;
+	}
+
+	nav-toggle {
+		padding-bottom: 10px;
+	}
 }
+/* @media (max-width: 450px) and (min-height: 768px) {
+	h3 {
+		line-height: 1;
+	}
+	.nav-toggle.expanded {
+		top: 120px;
+	}
+	/* .nav-toggle .nav-toggle-bar,
+	.nav-toggle .nav-toggle-bar::after,
+	.nav-toggle .nav-toggle-bar::before {
+		top: 80px;
+	} */
+/* /* } */
