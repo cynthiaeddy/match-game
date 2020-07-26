@@ -53,7 +53,7 @@ function cardsMatch() {
 	secondCard.removeEventListener('click', flipCard);
 
 	count++;
-	if (count === 6) {
+	if (count === 2) {
 		flashBackground();
 	}
 
