@@ -71,6 +71,9 @@ h1 {
 	font-size: 22px;
 	margin-bottom: 30px;
 }
+.nobr {
+	white-space: nowrap;
+}
 
 span {
 	animation: change 2s step-end both;
@@ -154,7 +157,7 @@ h3 {
 	height: 640px;
 	border-radius: 10px;
 	position: absolute;
-	background-image: url("images/match4.jpg");
+	background-image: url("images/match6a.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	opacity: 0;
@@ -263,12 +266,11 @@ img.car {
 	width: 50px;
 	height: 50px;
 	border-radius: 20%;
-	background: url("images/frontmaybe2.jpg");
+	background: url("images/frontmaybe1bug.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 200%;
 	margin: auto;
-	/* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); */
 }
 .lilBug:hover {
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
@@ -346,7 +348,7 @@ img.car {
 
 	.background {
 		width: 90vw;
-		background-image: url("images/vertbkg1.jpg");
+		background-image: url("images/vertbkg3a.jpg");
 		background-position: center;
 		border-radius: 10px;
 		height: 73vh;
@@ -403,7 +405,7 @@ img.car {
 
 	.background {
 		width: 90vw;
-		background-image: url("images/vertbkg1.jpg");
+		background-image: url("images/vertbkg3a.jpg");
 	}
 
 	nav-toggle {
