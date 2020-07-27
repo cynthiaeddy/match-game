@@ -30,6 +30,7 @@ hamburger.nav.addEventListener('click', function(e) {
 //////////// card functions //////////////
 
 function flipCard() {
+	if (boardLock) return;
 	if (this === firstCard) return;
 	// this.classList.toggle('flip');
 	this.classList.add('flip');

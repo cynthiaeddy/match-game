@@ -152,11 +152,11 @@ h3 {
 .background {
 	width: 640px;
 	height: 640px;
+	border-radius: 10px;
 	position: absolute;
-	background-image: url("images/backgroundTry.jpg");
+	background-image: url("images/match4.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-
 	opacity: 0;
 }
 .cards {
@@ -268,10 +268,10 @@ img.car {
 	background-position: center;
 	background-size: 200%;
 	margin: auto;
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+	/* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); */
 }
 .lilBug:hover {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 	transform: scale(1.05);
 	transition: transform .2s;
 }
@@ -346,6 +346,10 @@ img.car {
 
 	.background {
 		width: 90vw;
+		background-image: url("images/vertbkg1.jpg");
+		background-position: center;
+		border-radius: 10px;
+		height: 73vh;
 	}
 
 	nav-toggle {
@@ -399,6 +403,7 @@ img.car {
 
 	.background {
 		width: 90vw;
+		background-image: url("images/vertbkg1.jpg");
 	}
 
 	nav-toggle {
