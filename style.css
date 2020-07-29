@@ -290,13 +290,13 @@ img.car {
 		margin-top: 20vh;
 	}
 	h2 {
-		margin-top: 80px;
+		margin-top: 60px;
 	}
 	.nav-container {
-		height: 15vh;
+		height: 14vh;
 	}
 	.circleFooter {
-		height: 10vh;
+		height: 9vh;
 	}
 }
 @media (max-width: 450px) and (max-height: 815px) {
