@@ -94,22 +94,20 @@ function resetBoard() {
 	[ firstCard, secondCard ] = [ null, null ];
 }
 
-// (function shuffle() {
-// 	cards.forEach((card) => {
-// 		let randomPosition = Math.floor(Math.random() * 12);
-// 		card.style.order = randomPosition;
-// 	});
-// })();
-function shuffle() {
+(function shuffle() {
 	cards.forEach((card) => {
 		let randomPosition = Math.floor(Math.random() * 12);
 		card.style.order = randomPosition;
 	});
-}
+})();
+// function shuffle() {
+// 	cards.forEach((card) => {
+// 		let randomPosition = Math.floor(Math.random() * 12);
+// 		card.style.order = randomPosition;
+// 	});
+// }
 
-carButton.addEventListener('click', shuffle);
-
-cards.forEach((card) => card.addEventListener('click', flipCard));
+// carButton.addEventListener('click', shuffle);
 
 // function addShow() {
 // 	cards.forEach((card) => {
