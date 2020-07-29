@@ -306,7 +306,7 @@ img.car {
 }
 @media (max-width: 450px) and (max-height: 815px) {
 	.nav {
-		top: 140px;
+		top: 150px;
 		width: 100vw;
 		left: -100%;
 	}
