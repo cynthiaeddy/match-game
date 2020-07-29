@@ -7,6 +7,7 @@ let boardLock = false;
 let firstCard;
 let secondCard;
 let count = 0;
+let allCards = [];
 
 //////////// nav functions //////////////
 
@@ -58,10 +59,9 @@ function cardsMatch() {
 	secondCard.removeEventListener('click', flipCard);
 
 	count++;
-	if (count === 2) {
+	if (count === 6) {
 		flashBackground();
 	}
-
 	resetBoard();
 }
 
