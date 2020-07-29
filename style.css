@@ -285,12 +285,12 @@ img.car {
 	}
 }
 @media (max-width: 768px) {
-	.background,
 	.cards {
 		margin-left: 6vh;
-		margin-top: 20vh;
+		margin-top: 18vh;
 		position: fixed;
 	}
+
 	h2 {
 		margin-top: 60px;
 	}
