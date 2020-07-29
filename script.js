@@ -8,6 +8,10 @@ let firstCard;
 let secondCard;
 let count = 0;
 let allCards = [];
+const cardsFront = document.getElementsByClassName('front');
+const carFrontImg = document.querySelectorAll('.carFrontImg');
+console.log([ ...cardsFront ], [ ...carFrontImg ]);
+console.log(carFrontImg, cards);
 
 //////////// nav functions //////////////
 
@@ -101,7 +105,7 @@ function resetBoard() {
 // 	});
 // })();
 function shuffle() {
-	cards.forEach((card) => {
+	carFrontImg.forEach((card) => {
 		let randomPosition = Math.floor(Math.random() * 12);
 		card.style.order = randomPosition;
 	});
