@@ -272,7 +272,7 @@ img.car {
 	transition: transform .2s;
 }
 
-/* @media (max-width: 1024px) {
+@media (max-width: 1024px) {
 	.nav-container {
 		height: 20vh;
 	}
@@ -283,8 +283,8 @@ img.car {
 	.circleFooter {
 		height: 250px;
 	}
-} */
-@media (max-width: 768px) {
+}
+/* @media (max-width: 768px) {
 	h2 {
 		margin-top: 80px;
 	}
@@ -294,7 +294,7 @@ img.car {
 	.circleFooter {
 		height: 150px;
 	}
-}
+} */
 @media (max-width: 450px) and (max-height: 815px) {
 	.nav {
 		top: 140px;
