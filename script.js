@@ -6,6 +6,11 @@ let boardLock = false;
 let firstCard;
 let secondCard;
 let count = 0;
+let carButton = document.querySelector('.lilBug');
+let start = false;
+let intervalId;
+
+/////////  nav  ///////////
 
 const hamburger = {
 	navToggle: document.querySelector('.nav-toggle'),
@@ -22,6 +27,15 @@ hamburger.navToggle.addEventListener('click', function(e) {
 });
 hamburger.nav.addEventListener('click', function(e) {
 	hamburger.doToggle(e);
+});
+
+/////////  game ///////////
+
+carButton.addEventListener('click', (event) => {
+	if (carButton) {
+		start = true;
+		shuffle();
+	}
 });
 
 function flipCard() {
@@ -54,6 +68,7 @@ function cardsMatch() {
 
 	count++;
 	if (count === 2) {
+		start = false;
 		flashBackground();
 	}
 
@@ -90,9 +105,20 @@ function resetBoard() {
 }
 
 // (function shuffle() {
+// 	start = true;
 // 	cards.forEach((card) => {
 // 		let randomPosition = Math.floor(Math.random() * 12);
 // 		card.style.order = randomPosition;
 // 	});
 // })();
+function shuffle() {
+	cards.forEach((card) => {
+		let randomPosition = Math.floor(Math.random() * 12);
+		card.style.order = randomPosition;
+		if (card.classList.contains('flip')) {
+			card.classList.remove('flip');
+		}
+	});
+}
+
 cards.forEach((card) => card.addEventListener('click', flipCard));

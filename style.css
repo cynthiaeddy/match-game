@@ -143,8 +143,6 @@ h3 {
 /* ///////// cards ////////// */
 
 .background {
-	/* width: 640px;
-	height: 640px; */
 	width: 100%;
 	height: 100%;
 	border-radius: 10px;
@@ -306,7 +304,7 @@ img.car {
 }
 @media (max-width: 450px) and (max-height: 815px) {
 	.nav {
-		top: 200px;
+		top: 138px;
 		width: 100vw;
 		left: -100%;
 	}
@@ -350,8 +348,6 @@ img.car {
 	}
 
 	.background {
-		/* width: 100%;
-		height: 100%; */
 		background-image: url("images/vertbkg3a.jpg");
 		background-position: center;
 		border-radius: 10px;
