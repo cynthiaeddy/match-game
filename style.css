@@ -287,7 +287,9 @@ img.car {
 @media (max-width: 768px) {
 	.background,
 	.cards {
-		margin-top: 25vh;
+		margin-left: 6vh;
+		margin-top: 20vh;
+		position: fixed;
 	}
 	h2 {
 		margin-top: 60px;
