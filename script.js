@@ -31,13 +31,6 @@ hamburger.nav.addEventListener('click', function(e) {
 
 /////////  game ///////////
 
-carButton.addEventListener('click', (event) => {
-	if (carButton) {
-		start = true;
-		shuffle();
-	}
-});
-
 function flipCard() {
 	if (boardLock) return;
 	if (this === firstCard) return;
@@ -68,8 +61,8 @@ function cardsMatch() {
 
 	count++;
 	if (count === 2) {
-		start = false;
 		flashBackground();
+		// start = false;
 	}
 
 	resetBoard();
@@ -105,20 +98,34 @@ function resetBoard() {
 }
 
 // (function shuffle() {
-// 	start = true;
 // 	cards.forEach((card) => {
 // 		let randomPosition = Math.floor(Math.random() * 12);
 // 		card.style.order = randomPosition;
 // 	});
 // })();
+
 function shuffle() {
 	cards.forEach((card) => {
 		let randomPosition = Math.floor(Math.random() * 12);
 		card.style.order = randomPosition;
-		if (card.classList.contains('flip')) {
-			card.classList.remove('flip');
-		}
+		// if (card.classList.contains('flip')) {
+		// 	card.classList.remove('flip');
+		// }
 	});
 }
+
+carButton.addEventListener('click', (event) => {
+	cards.forEach((card) => {
+		if (card.classList.contains('flip')) {
+			card.classList.remove('flip');
+			count = 0;
+			resetBoard();
+		}
+	});
+	if (carButton) {
+		shuffle();
+	}
+	// 	}
+});
 
 cards.forEach((card) => card.addEventListener('click', flipCard));
