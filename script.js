@@ -1,15 +1,19 @@
 // console.log(cards);
 const cards = document.querySelectorAll('.card');
 let background = document.querySelector('.background');
+let carButton = document.querySelector('.lilBug');
+const cardsFront = document.querySelectorAll('.car-fr');
+let cardsFrontArray = [ ...cardsFront ];
 let hasCardFlipped = false;
 let boardLock = false;
 let firstCard;
 let secondCard;
 let count = 0;
-let carButton = document.querySelector('.lilBug');
 let start = false;
+let win;
 let intervalId;
 
+console.log(cardsFront, cardsFrontArray);
 /////////  nav  ///////////
 
 const hamburger = {
@@ -127,5 +131,12 @@ carButton.addEventListener('click', (event) => {
 	}
 	// 	}
 });
+
+function winGame() {
+	flashColor();
+	turnCounter.innerHTML = 'you win!';
+	start = false;
+	win = true;
+}
 
 cards.forEach((card) => card.addEventListener('click', flipCard));

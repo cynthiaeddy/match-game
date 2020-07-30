@@ -238,7 +238,8 @@ h3 {
 	opacity: 0;
 	transition: visibility 0s linear 1s, opacity 1s;
 }
-img.car {
+img.car,
+img.car-fr {
 	padding: 0;
 	height: 100%;
 	width: 100%;
