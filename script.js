@@ -76,13 +76,17 @@ function flashBackground() {
 	let cardsArray = Array.from(cards);
 	setTimeout(function() {
 		for (i = 0; i < cardsArray.length; i++) {
+			// for (i = 0; i < cardsFrontArray.length; i++) {
 			cardsArray[i].children[0].classList.add('show-background');
+			// cardsFrontArray[i].children[0].classList.add('show-background');
 			background.classList.add('z-up');
 		}
 	}, 1000);
 	setTimeout(function() {
 		for (i = 0; i < cardsArray.length; i++) {
+			// for (i = 0; i < cardsFrontArray.length; i++) {
 			cardsArray[i].children[0].classList.remove('show-background');
+			// cardsFrontArray[i].children[0].classList.remove('show-background');
 		}
 	}, 10000);
 }
@@ -109,7 +113,7 @@ function resetBoard() {
 // })();
 
 function shuffle() {
-	cards.forEach((card) => {
+	cardsFrontArray.forEach((card) => {
 		let randomPosition = Math.floor(Math.random() * 12);
 		card.style.order = randomPosition;
 		// if (card.classList.contains('flip')) {
@@ -133,8 +137,7 @@ carButton.addEventListener('click', (event) => {
 });
 
 function winGame() {
-	flashColor();
-	turnCounter.innerHTML = 'you win!';
+	flashBackground();
 	start = false;
 	win = true;
 }
