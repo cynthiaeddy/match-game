@@ -26,7 +26,6 @@ body {
 	position: fixed;
 	height: 100vh;
 	border-radius: 0 50px 50px 0;
-
 	z-index: 3;
 	background: #fff;
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
@@ -38,6 +37,7 @@ body {
 	z-index: 10;
 	left: 0;
 }
+
 ul {
 	list-style: none;
 }
