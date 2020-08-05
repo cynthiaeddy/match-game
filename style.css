@@ -215,13 +215,9 @@ h3 {
 	transition: transform .2s;
 }
 
-/* .memory-card.flip, */
 .card.flip {
 	transform: rotateY(180deg);
 }
-/* .show {
-	transform: rotateY(180deg);
-} */
 
 .front,
 .back {
@@ -270,7 +266,6 @@ img.car-fr {
 	bottom: 5vh;
 	position: fixed;
 	justify-content: center;
-	/* height: 125px; */
 }
 .lilBug {
 	text-align: center;
@@ -303,14 +298,14 @@ img.car-fr {
 }
 @media (max-width: 768px) {
 	.cards {
-		margin-left: 6vh;
 		margin-top: 18vh;
-		position: fixed;
 	}
 
-	h1,
-	h2 {
+	h1 {
 		margin-top: 60px;
+	}
+	h2 {
+		margin-top: 20px;
 	}
 	.nav-container {
 		height: 14vh;
@@ -347,8 +342,7 @@ img.car-fr {
 		line-height: 1.25;
 	}
 	.circleFooter {
-		height: 10vh;
-		padding-top: 10px;
+		bottom: 1vh;
 	}
 	.card {
 		width: calc(33.333% - 10px);
@@ -360,7 +354,7 @@ img.car-fr {
 		top: 17vh;
 		bottom: 10vh;
 		position: fixed;
-		margin: 0 0 0 20px;
+		margin: 0;
 		height: auto;
 	}
 
@@ -401,11 +395,11 @@ img.car-fr {
 
 	h3 {
 		font-size: 18px;
-		line-height: 1.1;
+		line-height: 1.2;
 	}
 	.circleFooter {
-		height: 10vh;
-		padding-top: 10px;
+		padding-top: 1vh;
+		bottom: 2vh;
 	}
 	.card {
 		width: calc(33.333% - 10px);
@@ -417,7 +411,7 @@ img.car-fr {
 		top: 17vh;
 		bottom: 10vh;
 		position: fixed;
-		margin: 0 0 0 20px;
+		margin: 0;
 		height: auto;
 	}
 

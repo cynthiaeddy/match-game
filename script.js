@@ -42,10 +42,8 @@ function flipCard() {
 		firstCard = this;
 		return;
 	}
-	// console.log(hasCardFlipped, firstCard);
 
 	secondCard = this;
-	// console.log(firstCard, secondCard);
 	checkForMatch();
 }
 //do cards match?
@@ -62,8 +60,6 @@ function cardsMatch() {
 	count++;
 	if (count === 2) {
 		flashBackground();
-
-		// start = false;
 	}
 
 	resetBoard();
@@ -73,17 +69,13 @@ function flashBackground() {
 	let cardsArray = Array.from(cards);
 	setTimeout(function() {
 		for (i = 0; i < cardsArray.length; i++) {
-			// for (i = 0; i < cardsFrontArray.length; i++) {
 			cardsArray[i].children[0].classList.add('show-background');
-			// cardsFrontArray[i].children[0].classList.add('show-background');
 			background.classList.add('z-up');
 		}
 	}, 1000);
 	setTimeout(function() {
 		for (i = 0; i < cardsArray.length; i++) {
-			// for (i = 0; i < cardsFrontArray.length; i++) {
 			cardsArray[i].children[0].classList.remove('show-background');
-			// cardsFrontArray[i].children[0].classList.remove('show-background');
 		}
 	}, 10000);
 }
@@ -102,20 +94,10 @@ function resetBoard() {
 	[ firstCard, secondCard ] = [ null, null ];
 }
 
-// (function shuffle() {
-// 	cards.forEach((card) => {
-// 		let randomPosition = Math.floor(Math.random() * 12);
-// 		card.style.order = randomPosition;
-// 	});
-// })();
-
 function shuffle() {
 	cards.forEach((card) => {
 		let randomPosition = Math.floor(Math.random() * 12);
 		card.style.order = randomPosition;
-		// if (card.classList.contains('flip')) {
-		// 	card.classList.remove('flip');
-		// }
 	});
 }
 
@@ -123,13 +105,11 @@ carButton.addEventListener('click', (event) => {
 	setTimeout(() => {
 		shuffle();
 	}, 500);
-	// window.location.reload();
 	cards.forEach((card) => {
 		if (card.classList.contains('flip')) {
 			card.classList.remove('flip');
 		}
 	});
-	// boardLock = false;
 	count = 0;
 	resetBoard();
 	location.reload();
@@ -142,3 +122,4 @@ function winGame() {
 }
 
 cards.forEach((card) => card.addEventListener('click', flipCard));
+shuffle();
