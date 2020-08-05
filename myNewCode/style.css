@@ -1,0 +1,217 @@
+:root {
+	--red-color: rgb(255, 81, 0);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	/* visibility: visible; */
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	font-family: 'Cutive Mono', monospace;
+}
+
+/* ///////////// nav bar ////////////// */
+
+.nav {
+	color: #000;
+	font-size: 25px;
+	font-weight: 100;
+	left: -450px;
+	padding: 32px 40px;
+	position: fixed;
+	height: 100vh;
+	border-radius: 0 50px 50px 0;
+	z-index: 3;
+	background: #fff;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+	transition: all 0.5s ease;
+	width: 350px;
+}
+
+.nav.expanded {
+	z-index: 10;
+	left: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li::before {
+	content: "\2022";
+	color: var(--red-color);
+	font-weight: bold;
+	display: inline-block;
+	width: 20px;
+	margin-left: -20px;
+}
+
+h2,
+h1 {
+	font-weight: 100;
+	text-transform: uppercase;
+	margin-top: 50px;
+	letter-spacing: 10px;
+	font-family: 'Courier Prime', monospace;
+	font-weight: 700;
+}
+h1 {
+	font-size: 22px;
+	margin-bottom: 30px;
+}
+
+span {
+	animation: change 2s step-end both;
+}
+
+@keyframes change {
+	from {
+		color: black;
+	}
+	to {
+		color: var(--red-color);
+	}
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 1.5;
+}
+.nav-container {
+	height: 14vh;
+	width: 100vw;
+	position: fixed;
+	justify-content: center;
+	display: flex;
+}
+.nav-toggle {
+	align-self: flex-end;
+	cursor: pointer;
+	height: 30px;
+	position: absolute;
+	width: 40px;
+	z-index: 5;
+	margin: auto;
+}
+
+.nav-toggle .nav-toggle-bar,
+.nav-toggle .nav-toggle-bar::after,
+.nav-toggle .nav-toggle-bar::before {
+	position: absolute;
+	top: 50%;
+	transition: all 0.5s ease;
+	transform: translateY(-50%);
+	background-color: rgba(255, 81, 0, 0.8);
+	content: '';
+	height: 3px;
+	width: 100%;
+}
+.nav-toggle .nav-toggle-bar {
+	margin-top: 0;
+}
+.nav-toggle .nav-toggle-bar::after {
+	margin-top: 10px;
+}
+.nav-toggle .nav-toggle-bar::before {
+	margin-top: -10px;
+}
+
+.nav-toggle.expanded .nav-toggle-bar::after,
+.nav-toggle.expanded .nav-toggle-bar::before {
+	background-color: rgba(255, 81, 0, 0.8);
+	margin-top: 0;
+}
+.nav-toggle.expanded .instructions {
+	visibility: hidden;
+}
+.nav-toggle.expanded .nav-toggle-bar::after {
+	transform: rotate(45deg);
+}
+.nav-toggle.expanded .nav-toggle-bar::before {
+	transform: rotate(-45deg);
+}
+.nav-toggle.expanded .nav-toggle-bar {
+	background: transparent;
+}
+
+/* ///////// cards ////////// */
+
+.background {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	position: absolute;
+	background-image: url("images/match6a.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0;
+}
+.cards {
+	width: 640px;
+	height: 640px;
+	margin: auto;
+	display: flex;
+	display: relative;
+	flex-wrap: wrap;
+	perspective: 1000px;
+}
+.card {
+	width: calc(25% - 10px);
+	height: calc(33.333% - 10px);
+	margin: 5px;
+	position: relative;
+	border-radius: 10px;
+	transform: scale(1);
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+
+	transition: transform .5s;
+}
+
+.card:active {
+	transform: scale(0.97);
+	transition: transform .2s;
+}
+/* .memory-card.flip, */
+.card.flip {
+	transform: rotateY(180deg);
+}
+/* .show {
+	transform: rotateY(180deg);
+} */
+
+.front,
+.back {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	position: absolute;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.front {
+	padding: 0px;
+}
+
+.front {
+	transform: rotateY(180deg);
+}
+img.car,
+img.car-fr {
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	border-radius: 10px;
+}
