@@ -64,15 +64,7 @@ h1 {
 	font-family: 'Courier Prime', monospace;
 	font-weight: 700;
 }
-/* h2 {
-	position: fixed;
-	margin: auto;
-} */
 
-/* .name {
-	border: 1px solid brown;
-	position: absolute;
-} */
 h1 {
 	font-size: 22px;
 	margin-bottom: 30px;
@@ -311,7 +303,7 @@ img.car-fr {
 		height: 14vh;
 	}
 	.circleFooter {
-		height: 9vh;
+		bottom: 3vh;
 	}
 }
 @media (max-width: 450px) and (max-height: 815px) {
