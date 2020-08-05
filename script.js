@@ -58,7 +58,7 @@ function cardsMatch() {
 	secondCard.removeEventListener('click', flipCard);
 
 	count++;
-	if (count === 2) {
+	if (count === 6) {
 		flashBackground();
 	}
 
@@ -96,7 +96,7 @@ function resetBoard() {
 
 function shuffle() {
 	cards.forEach((card) => {
-		let randomPosition = Math.floor(Math.random() * 12);
+		let randomPosition = Math.floor(Math.random() * 12) + 1;
 		card.style.order = randomPosition;
 	});
 }
