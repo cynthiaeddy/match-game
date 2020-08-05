@@ -9,10 +9,15 @@
 }
 
 body {
-	height: 100vh;
+	min-height: 100vh;
+	width: 100vw;
 	display: flex;
 	flex-wrap: wrap;
 	font-family: 'Cutive Mono', monospace;
+	overflow: hidden !important;
+	position: fixed;
+	justify-content: center;
+	/* align-items: center; */
 }
 
 /* ///////////// nav bar ////////////// */
@@ -55,14 +60,23 @@ h2,
 h1 {
 	font-weight: 100;
 	text-transform: uppercase;
-	margin-top: 50px;
 	letter-spacing: 10px;
 	font-family: 'Courier Prime', monospace;
 	font-weight: 700;
 }
+/* h2 {
+	position: fixed;
+	margin: auto;
+} */
+
+/* .name {
+	border: 1px solid brown;
+	position: absolute;
+} */
 h1 {
 	font-size: 22px;
 	margin-bottom: 30px;
+	margin-top: 50px;
 }
 
 span {
@@ -84,11 +98,13 @@ h3 {
 	line-height: 1.5;
 }
 .nav-container {
-	height: 14vh;
+	min-height: 14vh;
 	width: 100vw;
+	top: 0;
 	position: fixed;
 	justify-content: center;
 	display: flex;
+	align-items: center;
 }
 .nav-toggle {
 	align-self: flex-end;
@@ -251,10 +267,10 @@ img.car-fr {
 
 .circleFooter {
 	width: 100vw;
-	bottom: 0px;
+	bottom: 5vh;
 	position: fixed;
 	justify-content: center;
-	height: 125px;
+	/* height: 125px; */
 }
 .lilBug {
 	text-align: center;

@@ -2,8 +2,6 @@
 const cards = document.querySelectorAll('.card');
 let background = document.querySelector('.background');
 let carButton = document.querySelector('.lilBug');
-const cardsFront = document.querySelectorAll('.car-fr');
-let cardsFrontArray = [ ...cardsFront ];
 let hasCardFlipped = false;
 let boardLock = false;
 let firstCard;
@@ -11,9 +9,7 @@ let secondCard;
 let count = 0;
 let start = false;
 let win;
-let intervalId;
 
-console.log(cardsFront, cardsFrontArray);
 /////////  nav  ///////////
 
 const hamburger = {
@@ -66,6 +62,7 @@ function cardsMatch() {
 	count++;
 	if (count === 2) {
 		flashBackground();
+
 		// start = false;
 	}
 
@@ -113,7 +110,7 @@ function resetBoard() {
 // })();
 
 function shuffle() {
-	cardsFrontArray.forEach((card) => {
+	cards.forEach((card) => {
 		let randomPosition = Math.floor(Math.random() * 12);
 		card.style.order = randomPosition;
 		// if (card.classList.contains('flip')) {
@@ -123,17 +120,19 @@ function shuffle() {
 }
 
 carButton.addEventListener('click', (event) => {
+	setTimeout(() => {
+		shuffle();
+	}, 500);
+	// window.location.reload();
 	cards.forEach((card) => {
 		if (card.classList.contains('flip')) {
 			card.classList.remove('flip');
-			count = 0;
-			resetBoard();
 		}
 	});
-	if (carButton) {
-		shuffle();
-	}
-	// 	}
+	// boardLock = false;
+	count = 0;
+	resetBoard();
+	location.reload();
 });
 
 function winGame() {
