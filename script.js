@@ -1,36 +1,8 @@
-// // <!-- // Prevent variables from being global       -->
-// (function() {
-// 	// <!-- /*
-// 	//     1. Inject CSS which makes iframe invisible
-// 	// */ -->
-// 	var div = document.createElement('div'),
-// 		ref = document.getElementsByTagName('base')[0] || document.getElementsByTagName('script')[0];
-
-// 	div.innerHTML = '&shy;<style> iframe { visibility: hidden; } </style>';
-
-// 	ref.parentNode.insertBefore(div, ref);
-// 	// <!-- /*
-// 	//     2. When window loads, remove that CSS,
-// 	//        making iframe visible again
-// 	// */ -->
-// 	window.onload = function() {
-// 		div.parentNode.removeChild(div);
-// 	};
-// })();
-
-// $(function() {
-// 	$('body').fadeIn(1000);
-// 	setTimeout(function() {
-// 		$('body').fadeOut(1000, function() {
-// 			location.reload(true);
-// 		});
-// 	}, 60000);
-// });
-
 const cards = document.querySelectorAll('.card');
 let background = document.querySelector('.background');
 let carButton = document.querySelector('.lilBug');
 const cardsFront = document.querySelectorAll('.car-fr');
+const body = document.querySelector('body');
 let cardsFrontArray = [ ...cardsFront ];
 let hasCardFlipped = false;
 let boardLock = false;
@@ -95,7 +67,7 @@ function cardsMatch() {
 	count++;
 	if (count === 2) {
 		flashBackground();
-		// start = false;
+		// playGame();
 	}
 
 	resetBoard();
@@ -141,22 +113,56 @@ function shuffle() {
 	cards.forEach((card) => {
 		let randomPosition = Math.floor(Math.random() * 12);
 		card.style.order = randomPosition;
+
 		// if (card.classList.contains('flip')) {
-		// 	card.classList.remove('flip');
+		// card.classList.remove('flip');
 		// }
 	});
 }
 
+// function shuffle() {
+// 	cards.forEach((card) => {
+// 		let randomPosition = Math.floor(Math.random() * 12);
+// 		card.style.order = randomPosition;
+// 	});
+// }
+
+// function setFadeIn() {
+// 	document.body.className = 'body fade-in';
+// 	setTimeout(setFadeOut, 500);
+// }
+
+// function setFadeOut() {
+// 	document.body.className = 'body';
+// }
+
 carButton.addEventListener('click', (event) => {
-	// location.reload();
+	setTimeout(() => {
+		shuffle();
+	}, 500);
+	// window.location.reload();
+	cards.forEach((card) => {
+		if (card.classList.contains('flip')) {
+			card.classList.remove('flip');
+		}
+	});
+	// boardLock = false;
+	count = 0;
+	resetBoard();
 });
 
 function winGame() {
 	flashColor();
 	turnCounter.innerHTML = 'you win!';
-	start = false;
+	// start = true;
 	win = true;
 }
 
+// function resetGame() {
+// 	location.reload();
+// }
+// function playGame() {
 cards.forEach((card) => card.addEventListener('click', flipCard));
-shuffle();
+// }
+// playGame();
+// shuffle();

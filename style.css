@@ -9,6 +9,7 @@
 }
 
 body {
+	/* visibility: visible; */
 	height: 100vh;
 	display: flex;
 	flex-wrap: wrap;
@@ -272,6 +273,20 @@ img.car-fr {
 	transform: scale(1.05);
 	transition: transform .2s;
 }
+
+body {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-ms-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3 ease-in-out;
+}
+body.fade {
+	opacity: 0;
+}
+
+/* /////////// media queries /////////// */
 
 @media (max-width: 1024px) {
 	.nav-container {
