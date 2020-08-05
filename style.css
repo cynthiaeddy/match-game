@@ -305,6 +305,9 @@ img.car-fr {
 	.circleFooter {
 		bottom: 3vh;
 	}
+	.circleFooter {
+		height: 80px;
+	}
 }
 @media (max-width: 450px) and (max-height: 815px) {
 	.nav {
