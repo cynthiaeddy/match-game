@@ -37,6 +37,7 @@ hamburger.nav.addEventListener('click', function(e) {
 /////////  game ///////////
 
 function flipCard() {
+	console.log(this);
 	if (boardLock) return;
 	if (this === firstCard) return;
 	// this.classList.toggle('flip');

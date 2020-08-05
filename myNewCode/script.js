@@ -1,8 +1,11 @@
-const cards = document.querySelectorAll('.card');
+let cards = document.querySelectorAll('.card');
+cards = [ ...cards ];
+
 let background = document.querySelector('.background');
 let carButton = document.querySelector('.lilBug');
 const cardsFront = document.querySelectorAll('.car-fr');
 const body = document.querySelector('body');
+matchedCards = document.querySelectorAll('.match');
 let cardsFrontArray = [ ...cardsFront ];
 let hasCardFlipped = false;
 let boardLock = false;
@@ -11,6 +14,7 @@ let secondCard;
 let count = 0;
 let start = false;
 let win;
+let cardsFlipped = [];
 
 /////////  nav  ///////////
 
@@ -33,40 +37,93 @@ hamburger.nav.addEventListener('click', function(e) {
 
 /////////  game ///////////
 
+// document.body.onload = startGame();
+
 function startGame() {
 	//shuffle cards
-	let shuffledImages = shuffle(imgElementsArray);
 
-	for (i = 0; i < shuffledImages.length; i++) {
-		//remove all images from previous games from each card (if any)
-		cardElements[i].innerHTML = '';
+	cardsFlipped = [];
+	shuffle();
+	cards.forEach((card) => {
+		card.classList.remove('show', 'open', 'match', 'disabled');
+	});
 
-		//add the shuffled images to each card
-		cardElements[i].appendChild(shuffledImages[i]);
-		cardElements[i].type = `${shuffledImages[i].alt}`;
-
-		//remove all extra classes for game play
-		cardElements[i].classList.remove('show', 'open', 'match', 'disabled');
-		cardElements[i].children[0].classList.remove('show-img');
-	}
-
-	//listen for events on the cards
-	for (let i = 0; i < cardElementsArray.length; i++) {
-		cardElementsArray[i].addEventListener('click', displayCard);
-	}
-
-	//when game starts show all the cards for a split second
-	flashCards();
-
-	//reset moves
-	moves = 0;
-	counter.innerText = `${moves} move(s)`;
-	//reset star rating
-	for (let i = 0; i < starElementsArray.length; i++) {
-		starElementsArray[i].style.opacity = 1;
-	}
-
-	//Reset Timer on game reset
-	timer.innerHTML = '0 mins 0 secs';
-	clearInterval(interval);
+	cards.forEach((card) => {
+		card.addEventListener('click', displayCard);
+	});
 }
+
+function shuffle() {
+	cards.forEach((card) => {
+		let randomPosition = Math.floor(Math.random() * 12);
+		card.style.order = randomPosition;
+
+		// if (card.classList.contains('flip')) {
+		// card.classList.remove('flip');
+		// }
+	});
+}
+function displayCard() {
+	this.classList.toggle('open');
+	this.classList.toggle('show');
+	this.classList.toggle('disabled');
+}
+
+function cardFlip() {
+	cardsFlipped.push(this);
+	if (cardsFlipped.length === 2) {
+		let isMatch = cardsFlipped[0].dataset.image === cardsFlipped[1].dataset.image;
+		isMatch ? cardsMatch() : cardsDontMatch();
+	}
+}
+
+function cardsMatch() {
+	cardsFlipped[0].classList.add('match', 'disabled');
+	cardsFlipped[1].classList.add('match', 'disabled');
+	cardsFlipped[0].classList.remove('show', 'open');
+	cardsFlipped[1].classList.remove('show', 'open');
+
+	// count++;
+	// if (count === 2) {
+	// 	flashBackground();
+	// 	// playGame();
+	// }
+	cardsFlipped = [];
+
+	// resetBoard();
+}
+
+function cardsDontMatch() {
+	cardsFlipped[0].classList.add('unmatched');
+	cardsFlipped[1].classList.add('unmatched');
+	disable();
+	// boardLock = true;
+	setTimeout(() => {
+		cardsFlipped[0].classList.remove('show', 'open', 'unmatched');
+		cardsFlipped[1].classList.remove('show', 'open', 'unmatched');
+		enable();
+		cardsFlipped = [];
+		// resetBoard();
+	}, 1500);
+}
+
+const disable = () => {
+	cards.filter((card) => {
+		card.classList.add('disabled');
+	});
+};
+
+const enable = () => {
+	cards.filter((card) => {
+		card.classList.remove('disabled');
+		matchedCards.forEach((card) => {
+			card.classList.add('disabled');
+		});
+	});
+};
+
+cards.forEach((card) => {
+	card.addEventListener('click', cardFlip);
+	card.addEventListener('click', displayCard);
+});
+//
