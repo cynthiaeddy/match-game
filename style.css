@@ -336,7 +336,7 @@ img.car-fr {
 		line-height: 1.25;
 	}
 	.circleFooter {
-		bottom: -20px;
+		bottom: -40px;
 	}
 	.card {
 		width: calc(33.333% - 10px);
@@ -393,7 +393,7 @@ img.car-fr {
 	}
 	.circleFooter {
 		padding-top: 1vh;
-		bottom: 2vh;
+		bottom: -20px;
 	}
 	.card {
 		width: calc(33.333% - 10px);
