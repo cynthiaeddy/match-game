@@ -393,7 +393,7 @@ img.car-fr {
 	}
 	.circleFooter {
 		padding-top: 1vh;
-		bottom: -20px;
+		bottom: -10px;
 	}
 	.card {
 		width: calc(33.333% - 10px);
