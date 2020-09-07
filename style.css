@@ -276,7 +276,7 @@ img.car-fr {
 	transition: transform .2s;
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
 	.nav-container {
 		height: 20vh;
 	}
@@ -286,8 +286,8 @@ img.car-fr {
 	}
 	.circleFooter {
 		height: 250px;
-	}
-}
+	} */
+/* } */
 @media (max-width: 768px) {
 	.cards {
 		margin-top: 18vh;
