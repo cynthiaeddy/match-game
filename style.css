@@ -17,7 +17,6 @@ body {
 	overflow: hidden !important;
 	position: fixed;
 	justify-content: center;
-	/* align-items: center; */
 }
 
 /* ///////////// nav bar ////////////// */
@@ -31,7 +30,6 @@ body {
 	position: fixed;
 	height: 100vh;
 	border-radius: 0 50px 50px 0;
-
 	z-index: 3;
 	background: #fff;
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
@@ -165,7 +163,6 @@ h3 {
 	height: 640px;
 	margin: auto;
 	display: flex;
-	display: relative;
 	flex-wrap: wrap;
 	perspective: 1000px;
 }
@@ -198,7 +195,6 @@ h3 {
 	transform: scale(1);
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
-
 	transition: transform .5s;
 }
 
@@ -276,18 +272,6 @@ img.car-fr {
 	transition: transform .2s;
 }
 
-/* @media (max-width: 1024px) {
-	.nav-container {
-		height: 20vh;
-	}
-	h1,
-	h2 {
-		margin-top: 150px;
-	}
-	.circleFooter {
-		height: 250px;
-	} */
-/* } */
 @media (max-width: 768px) {
 	.cards {
 		margin-top: 18vh;
